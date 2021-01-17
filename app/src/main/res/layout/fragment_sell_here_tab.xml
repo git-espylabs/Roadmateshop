@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/loadingFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="100dp"
+            style="@style/SpinKitView.Small.MultiplePulseRing"
+            app:SpinKit_Color="@color/colorPrimary"/>
+
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/addproduct"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:background="@color/colorPrimaryDark">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/plus_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="ADD PRODUCT TO STORE "
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_marginStart="15dp"/>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:visibility="gone"
+                android:id="@+id/category_layout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/rounded_corner_edit_text"
+                android:gravity="center|start"
+                android:layout_margin="3dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="50dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="What are you offering?"/>
+
+                <Spinner
+                    android:id="@+id/category_spinner"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp" />
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+                    <TextView
+                        android:id="@+id/category_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|bottom"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="CANCEL"
+                        android:layout_margin="20dp"
+                        android:drawablePadding="15dp" />
+                    <TextView
+                        android:id="@+id/category_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="NEXT"
+                        android:layout_margin="20dp"
+                        android:drawablePadding="15dp"
+                        android:drawableEnd="@drawable/next_icon"/>
+                </FrameLayout>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:visibility="gone"
+                android:id="@+id/name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="248dp"
+                android:background="@drawable/rounded_corner_edit_text"
+                android:gravity="center|start"
+                android:layout_margin="3dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_gravity="center|top"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="What are you selling?"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edtname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Eg: Maruthi suzuki"/>
+
+                    <EditText
+                        android:id="@+id/edtDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:layout_gravity="center"
+                        android:hint="A small description"/>
+
+                    <EditText
+                        android:id="@+id/edtprice"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:inputType="number"
+                        android:hint="Set a price"/>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+                    <TextView
+                        android:id="@+id/name_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|bottom"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="CANCEL"
+                        android:layout_margin="20dp"
+                        android:drawablePadding="15dp" />
+                    <TextView
+                        android:id="@+id/name_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="NEXT"
+                        android:layout_margin="20dp"
+                        android:drawablePadding="15dp"
+                        android:drawableEnd="@drawable/next_icon"/>
+                </FrameLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:visibility="gone"
+                android:id="@+id/image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/rounded_corner_edit_text"
+                android:gravity="center|start"
+                android:layout_margin="3dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"/>
+
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/imagenumber1"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Upload image" />
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start|top"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"/>
+
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/imagenumber2"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:textSize="15sp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Upload image" />
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end|top"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"/>
+
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/imagenumber3"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:textSize="15sp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Upload image" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="(Choose upto 3 images)"
+                    android:drawablePadding="15dp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <TextView
+                        android:id="@+id/image_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|bottom"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="CANCEL"
+                        android:layout_margin="15dp"
+                        android:drawablePadding="15dp" />
+
+                    <TextView
+                        android:visibility="visible"
+                        android:id="@+id/image_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="NEXT"
+                        android:layout_margin="15dp"
+                        android:drawablePadding="15dp"
+                        android:drawableEnd="@drawable/next_icon"/>
+                </FrameLayout>
+
+            </FrameLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/process_layout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/rounded_corner_edit_text"
+                android:orientation="vertical">
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    app:SpinKit_Color="@color/colorPrimaryDark"
+                    style="@style/SpinKitView.Large.ThreeBounce"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Processing..."
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/empty_caution"
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/empty_caution"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="visible"
+                android:id="@+id/sellHereRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

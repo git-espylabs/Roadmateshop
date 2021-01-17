@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/shopimage"
+                android:src="@drawable/road_mate_plain"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:gravity="center"
+                android:weightSum="2"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/editButton"
+                    android:layout_weight="0.9"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="Edit"
+                    android:visibility="visible"
+                    android:background="@drawable/capsule_button_one"/>
+
+                <Button
+                    android:id="@+id/logoutButton"
+                    android:layout_weight="0.9"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="LOGOUT"
+                    android:textColor="#fff"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="9dp"
+                    android:visibility="visible"
+                    android:background="@drawable/capsule_button_two"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:hint="Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:alpha="1"
+                android:fontFamily="@font/signika_negative_semibold"
+                android:gravity="center|left"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvContact"
+                android:hint="Contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:alpha="1"
+                android:fontFamily="@font/signika_negative_semibold"
+                android:gravity="center|left"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="17sp" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tvEmail"
+                android:hint="Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:alpha="1"
+                android:fontFamily="@font/signika_negative_semibold"
+                android:gravity="center|left"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:weightSum="2.25"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnShare"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="7dp"
+                    android:textColor="#fff"
+                    android:drawableRight="@drawable/ic_menu_share_white"
+                    android:background="@drawable/red_curved_button"
+                    android:text="share my shop" />
+
+                <View
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btnInvite"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="7dp"
+                    android:textColor="#fff"
+                    android:drawableRight="@drawable/ic_menu_share_white"
+                    android:background="@drawable/red_curved_button"
+                    android:text="invite shops" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_marginTop="12dp"
+                android:id="@+id/shopStatus"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="10dp"
+                android:checked="true"
+                android:buttonTint="@color/color2"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Shop Open" />
+
+            <RelativeLayout
+                android:paddingTop="16dp"
+                android:paddingBottom="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="39dp">
+
+                <TextView
+                    android:id="@+id/otherservices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="17sp"
+                    android:text="Shop Services:"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/signika_negative"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:id="@+id/btnAddService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="+ Add Category"
+                    android:layout_gravity="center|right"
+                    android:layout_alignParentRight="true"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/signika_negative"
+                    android:visibility="visible"
+                    android:textColor="#DC2323"/>
+
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    android:id="@+id/categoryProgress"
+                    android:visibility="gone"
+                    style="@style/SpinKitView.Large.Wave"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:SpinKit_Color="#DC2323" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/shCatList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="10dp"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reviews and Rating"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:layout_gravity="center|start"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_gravity="center|end"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_rating"
+                        android:drawableEnd="@drawable/star"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar2"
+                        style="@style/RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:progressTint="#FFC107" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/shReviewList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:textSize="18sp"
+                android:background="@drawable/button_outline"
+                android:textColor="@color/textColor"
+                android:gravity="center_vertical"
+                android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
+                android:text="Suggestions &amp; Complaints"/>
+
+            <TextView
+                android:id="@+id/terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:textSize="18sp"
+                android:background="@drawable/button_outline"
+                android:textColor="@color/textColor"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp"
+                android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
+                android:text="Terms &amp; Conditions"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:visibility="gone"
+        android:id="@+id/progressView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.35"
+        style="@style/SpinKitView.Large.MultiplePulseRing"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/colorPrimaryDark" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

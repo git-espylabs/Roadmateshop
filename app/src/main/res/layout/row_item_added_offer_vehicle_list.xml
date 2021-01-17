@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:background="@drawable/rounded_corner_edit_text"
+        android:layout_marginTop="12dp"
+        android:padding="9dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_weight="1.7"
+            android:layout_width="0dp"
+            android:gravity="center|left"
+            android:hint="Maruti Ertiga Petrol"
+            android:textSize="14dp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/signika_negative_semibold"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/remove"
+            android:layout_weight="0.3"
+            android:layout_width="0dp"
+            android:textSize="14dp"
+            android:textColor="#CF0B0B"
+            android:text="Remove"
+            android:fontFamily="@font/signika_negative_semibold"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

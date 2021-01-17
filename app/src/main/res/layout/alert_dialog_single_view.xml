@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/alert_vehicle_brand_name_view"
+        android:layout_width="match_parent"
+        android:textSize="16dp"
+        android:fontFamily="@font/maven_pro_medium"
+        android:paddingStart="40dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/textColor"
+        android:paddingBottom="10dp"
+        android:text="Hero Honda "/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#eee"
+        />
+
+</LinearLayout>

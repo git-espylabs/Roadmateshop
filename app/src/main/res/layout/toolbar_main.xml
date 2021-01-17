@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbCommon"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ToolbarEspyApp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/tbSub1"
+            android:baselineAligned="false"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:visibility="visible"
+                    android:paddingEnd="7dp"
+                    android:id="@+id/customToolbarBack"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="0.35"
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:paddingRight="7dp">
+
+                <ImageView
+                    android:visibility="visible"
+                    android:id="@+id/toolbarBack"
+                    android:contentDescription=""
+                    android:src="@drawable/arrow_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:orientation="vertical"
+                android:id="@+id/toolbarTitle2"
+                android:gravity="center|left"
+                android:layout_gravity="center"
+                android:layout_weight="1.85"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:background="@null"
+                    android:id="@+id/toolbar_title2"
+                    android:text="@string/app_name"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Home"
+                    android:background="@null"
+                    android:id="@+id/toolbar_title_sub2"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/grey_600"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:paddingEnd="7dp"
+                    android:visibility="visible"
+                    android:id="@+id/cust_icon"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="0.8"
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:paddingRight="7dp">
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/toolbarCustIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:visibility="visible"
+                    android:id="@+id/rerset"
+                    android:text="Empty Cart"
+                    android:layout_marginRight="2dp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center|right"
+                    android:gravity="center|right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/tbMain"
+            android:baselineAligned="false"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <LinearLayout
+                android:visibility="visible"
+                android:paddingEnd="7dp"
+                android:layout_gravity="center"
+                android:gravity="center|right"
+                android:layout_weight="0.3"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:paddingRight="7dp">
+
+                <ImageView
+                    android:visibility="visible"
+                    android:contentDescription=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:orientation="vertical"
+                android:id="@+id/toolbarTitle"
+                android:gravity="center|left"
+                android:layout_gravity="center"
+                android:layout_weight="2.4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:text="Home"
+                    android:background="@null"
+                    android:id="@+id/toolbar_title"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Home"
+                    android:background="@null"
+                    android:id="@+id/toolbar_title_sub"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/grey_600"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingEnd="7dp"
+                android:visibility="gone"
+                android:id="@+id/customToolbarSearch"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="0.35"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:paddingRight="7dp">
+
+                <ImageView
+                    android:id="@+id/toolbarSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingEnd="7dp"
+                android:visibility="visible"
+                android:id="@+id/profileIcon"
+                android:layout_gravity="center"
+                android:gravity="center|left"
+                android:layout_weight="0.3"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:paddingRight="3dp">
+
+                <ImageView
+                    android:id="@+id/logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+</merge>

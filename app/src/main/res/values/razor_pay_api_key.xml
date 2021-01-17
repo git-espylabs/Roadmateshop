@@ -1,0 +1,5 @@
+<resources>
+
+    <string name="razor_pay_key_staging" templateMergeStrategy="preserve" translatable="false">rzp_test_gdal4RsBBbAlcu</string>
+    <string name="razor_pay_key_production" templateMergeStrategy="preserve" translatable="false">rzp_live_DJMWsasbzBeo9u</string>
+</resources>

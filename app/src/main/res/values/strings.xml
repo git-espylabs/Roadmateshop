@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">RoadMate Shop</string>
+    <string name="otp_prompt">4-digit verification code send to +91</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_login_page">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="internet_connection">Network connection Problem!  Please check your Internet connection and try again</string>
+    <string name="retry">Retry</string>
+    <string name="arrowdown">\u25BC</string>
+    <string name="title_activity_mechanic_home">MechanicHome</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="store_category">
+        <item>All</item>
+        <item>Vehicle</item>
+        <item>Accessories</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="addstore_category">
+        <item>Vehicle</item>
+        <item>Accessories</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="exe_shop">
+        <item>Active</item>
+        <item>Inactive</item>
+    </string-array>
+    <string-array name="book_type_category">
+        <item>e-workshop Booking</item>
+        <item>Offer Booking</item>
+        <item>Service Bookings</item>
+    </string-array>
+    <string name="title_activity_nav_drawer">NavDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <string name="title_activity_wallet_alert">WalletAlert</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="terms_conditions">IMPORTANT - Please read the terms and conditions carefully and accept before using RoadMate mobile application, you agree to be bound by the following terms and conditions for access and use of the application, by accepting this terms and conitions means you are agreed with all terms listed below by RoadMate, Any modifications from below terms will be notified.
+                                    \nTerms &amp; Conditions
+                                    \n\n1. This application is for availing the services related to all kind of vehicles currently available in the market. RoadMate is a platform that provides opportunities and exchange of information between vehicle owners and related service centres provided at their registered service centres. Users should never use this opportunity as an emergency service to mitigate risk to life or property.service availability and completion of your work truly depend upon the3rd party service providers listed on the platform. And so RoadMate will not be responsible for any damages or theft that is caused by 3rd party service providers. Employees at any service centres are not employed by RoadMate. RoadMate will not be responsible for any misbehaviour or misconduct from their side. Service centres have the right to only provide services listed in details of package you purchase. Any service outside of it is payable (including parts).
+                                    \n\n2. RoadMate reserves the right to, and may at any time and from time to time, change these terms and conditions for access and use
+                                    \n\n3. You are responsible for the confidentiality of your Username and Password, and all activities occurring under them.In the event you become aware of any unauthorised access or theft of your password, you should immediately notify RoadMate and provide such particulars as required.
+                                    \n\n4. Please note that bookings and providing of services bought are subject to availability of slots at service centres. Accordingly, please note that your booking/purchase is only confirmed and entered into the system when you receive an acknowledgement that your appointment is confirmed.
+                                    \n\n5. RoadMate &amp; its associated service centres reserve the right, at its absolute discretion, to suspend or terminate your access to the System fully or partially or terminate the System at any time without notice.
+                                    \n\n6. The information you provide will be subject to share with the public and third parties via RoadMate application to improve the services, There fore you shall agree to give the concent.
+                                    \n\n7. You shall use the System for lawful and proper purposes only and shall, in any event, comply with all relevant laws and regulations in India and in any jurisdiction from which you access the System. In particular, you agree not to
+
+                                    \n\ni. Manipulate any information supplied on the RoadMate application in a manner that would lead to an inaccurate, misleading or discriminating presentation of information being displayed;
+                                    \nii. Post, transmit or disseminate any information on or via the application which is or may be harmful, obscene, defamatory or otherwise illegal;
+                                    \niii. Use the application in a manner which causes or may cause an infringement of the rights of any other;
+                                    and/or
+                                    \niv. Use any software, routine or device to interfere or attempt to interfere electronically or manually with the operation or functionality of the application, including uploading or making available files containing corrupt data or viruses via any means whatsoever.
+
+                                    \n\n8. The copyright and all other intellectual property rights in the Application and contents thereof (including all design, text, sound recordings, images or links) are the property of RoadMate. As such, they may not be reproduced, transmitted, published, displayed, adapted, modified, altered, distributed, hyperlinked, framed or otherwise interfered with or used in whole or in part in any manner without the prior written consent of RoadMate. All trademarks, service marks and logos (Marks) used or displayed on the application are the property of the RoadMate or the respective third-party proprietors identified in the Application and no such Mark may be used in any way whatsoever without prior written consent from RoadMate. The Application is provided on an \'as is\' and \'as available\' basis without any warranty of any kind. Under no circumstances shall the RoadMate be liable to you or any third party under any cause of action whatsoever (including negligence) for any damages, losses, expenses or costs whatsoever (including without limitation, any direct, indirect, special, incidental or consequential damages, loss of profits or loss of opportunity) arising from or in connection with your access and/or use of this Application including but not limited to:
+                                    \n\n->Any failure of performance, system, server or connection failure, error, omission, interruption, breach of security, computer virus, malicious code, corruption, delay in operation or transmission, transmission error or unavailability of access arising in the course of or in connection with your accessing and/or using this System;
+                                    \n\n->Your reliance on any information, materials, hyperlinks or online services provided; and/or
+                                    \n\n->Any unauthorised access to or alteration of your transmissions or data, any material or data sent or received or not sent or received, or any transactions entered into through the System.
+                                    \n\n9.All commercial/contractual terms are offered by and agreed to between Buyers and Sellers alone. The commercial/contractual terms include without limitation price, shipping or transportation costs, payment methods, payment terms, date, period and mode of delivery, warranties related to products and services and after-sales services related to products and services.
+
+                                    \n\n10.Placement of order by a Buyer with Seller on the Website/ App is an offer to buy the product(s) in the order by the Buyer to the Seller and it shall not be construed as Seller’s acceptance of Buyer’s offer to buy the product(s) ordered. The Seller retains the right to cancel any such order placed by the Buyer, at its sole discretion and the Buyer shall be intimated of the same.
+                                    \n\n11.The Selling Price of the Product is subject to change without notice prior to the purchase of the Product by the Buyer. The Selling Price is provided on the Application on \'as is\' basis as provided by the Seller. Due to technical reasons there may be errors in Selling Price which may be corrected by the Seller at any time and any acceptance of offer of sale by the Buyer of the Products subject to such faulty Selling Price shall, subject to discretion of the Seller, not be a valid acceptance and such transaction can be avoided by the Seller.
+
+
+                                    \n\n12.RoadMate does not make any representation or warranty as to specifics (such as quality, value, salability, etc) of the products proposed to be sold or offered to be sold or purchased on the App. RoadMate does not implicitly or explicitly support or endorse the sale or purchase of any products or services on the App, and accepts no liability for any errors or omissions, whether on behalf of itself or third parties.
+                                    \n\n13.RoadMate is not responsible for any non-performance or breach of any contract entered into between Buyers and Sellers and is not required to mediate or resolve any dispute or disagreement between Buyers and Sellers.
+                                    \n\n14.  For your convenience, the Application incorporates hyperlinks to other/external websites on the Internet. RoadMate does not accept responsibility for the contents of or the consequences of accessing any linked website or any link contained in a linked website. The hyperlinks provided in this website shall not be considered or construed as an endorsement or verification of such linked websites or the contents therein by RoadMate. You agree that your access to and/or use of such linked websites is entirely at your own risk and subject to the terms and conditions of access and/or use contained therein.
+                                    \n\n15. These Terms &amp; Conditions shall be governed by and construed in accordance with laws of the Republic of India and you irrevocably agree to submit to the jurisdiction of the Indian courts.
+                                    \n\nTerms and Conditions for Free Wallet Money
+                                    \n\n1.For a limited period, users will be given a onetime reward of Rs 500 in their RoadMate account wallet when they verify their mobile number with RoadMate.
+                                    \n\n2.The reward money at any circumstances can only be used for booking packages at Rs 500 or above.
+                                    \n\n3.Users shall use only Rs 50 from the reward of Rs 500 for every package they choose.
+                                    \n\n4.Reward money can be used only when users making payments through online.</string>
+    <string name="Rs">\u20B9</string>
+    <string name="file_provider_name" translatable="false">.fileProvider</string>
+</resources>

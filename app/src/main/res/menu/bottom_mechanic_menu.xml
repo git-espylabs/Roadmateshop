@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Home"
+        android:icon="@drawable/home_icon"
+        android:id="@+id/navigation_home"
+        android:iconTint="@color/colorPrimaryDark" />
+
+    <item
+        android:title="Services"
+        android:icon="@drawable/packageicon"
+        android:id="@+id/navigation_search"
+        android:iconTint="@color/colorPrimaryDark" />
+
+    <item
+        android:title="e-workshop"
+        android:icon="@drawable/transaction_spare"
+        android:id="@+id/navigation_notification"
+        android:iconTint="@color/colorPrimaryDark" />
+
+    <item
+
+        android:title="My Store"
+        android:icon="@drawable/repair"
+        android:id="@+id/navigation_store"
+        android:iconTint="@color/colorPrimaryDark"
+        />
+
+    <item
+        android:title="My Shop"
+        android:icon="@drawable/shop_icon"
+        android:id="@+id/navigation_account"
+        android:iconTint="@color/colorPrimaryDark" />
+
+</menu>

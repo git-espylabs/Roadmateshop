@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:layout_gravity="center|top"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="5dp">
+
+
+        <TextView
+            android:id="@+id/vehType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#676565"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:hint="Vehicle Type"
+            android:padding="3dp"
+            android:gravity="center|start" />
+
+        <LinearLayout
+            android:gravity="center|left"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:visibility="visible"
+                android:id="@+id/vehBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:hint="Brand"
+                android:maxLines="3"
+                android:gravity="center|start"
+                android:padding="3dp"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/vehModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:maxLines="3"
+                android:hint="Model"
+                android:layout_marginLeft="8dp"
+                android:gravity="center|start"
+                android:padding="3dp"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:layout_gravity="center|top"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="5dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/check"
+                android:buttonTint="@color/colorPrimary"
+                android:layout_gravity="start|center"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/checkbox"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center|start"
+                android:src="@drawable/checkbox_check_model"/>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/checkedbox"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center|start"
+                android:src="@drawable/checkbox_checked_model"/>
+
+            <TextView
+                android:id="@+id/package_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="35dp"
+                android:padding="3dp"
+                android:gravity="center|start" />
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/package_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="3dp"
+            android:gravity="center|start" />
+
+        <TextView
+            android:visibility="visible"
+            android:id="@+id/package_for"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:maxLines="3"
+            android:gravity="center|start"
+            android:padding="3dp"
+            android:ellipsize="end" />
+        <TextView
+            android:id="@+id/package_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:maxLines="3"
+            android:gravity="center|start"
+            android:padding="3dp"
+            android:ellipsize="end" />
+
+
+        <Button
+            android:id="@+id/btnGetFeatureList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:text="Show feature">
+
+        </Button>
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

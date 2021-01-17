@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:paddingStart="10dp"
+                android:textSize="18sp"
+                android:text="Shop Category"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:visibility="visible"
+                    android:id="@+id/selShopCat"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Select"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:paddingStart="10dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/rounded_corner_edit_text"/>
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    android:id="@+id/spinBar1"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_gravity="center"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    style="@style/SpinKitView.Large.Wave"
+                    app:SpinKit_Color="@color/colorPrimary"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:paddingStart="10dp"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:text="Fuel Type"/>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:id="@+id/selFuelType"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Select"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:paddingStart="10dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/rounded_corner_edit_text"/>
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    android:id="@+id/spinBar5"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_gravity="center"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    style="@style/SpinKitView.Large.Wave"
+                    app:SpinKit_Color="@color/colorPrimary"/>
+
+            </RelativeLayout>
+
+
+            <EditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="Title"
+                android:paddingStart="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:imeOptions="actionNext"
+                android:background="@drawable/rounded_corner_edit_text"/>
+
+
+            <EditText
+                android:id="@+id/etDesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="Small description"
+                android:paddingStart="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:imeOptions="actionNext"
+                android:background="@drawable/rounded_corner_edit_text"/>
+
+            <RadioGroup
+                android:id="@+id/rdGroup1"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Offer"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:checked="true"
+                    android:layout_marginLeft="16dp"
+                    android:id="@+id/rbPrice"
+                    android:text="Price"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rbPerc"
+                    android:text="Percentage"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RadioGroup>
+
+
+            <EditText
+                android:id="@+id/etNormalAmount"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="Normal Amount"
+                android:inputType="numberDecimal"
+                android:paddingStart="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:imeOptions="actionNext"
+                android:background="@drawable/rounded_corner_edit_text"/>
+
+            <EditText
+                android:id="@+id/etOfferAmount"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="Offer Amount"
+                android:inputType="numberDecimal"
+                android:paddingStart="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:imeOptions="actionDone"
+                android:background="@drawable/rounded_corner_edit_text"/>
+
+            <EditText
+                android:id="@+id/etPercentage"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="Offer Percentage"
+                android:inputType="numberDecimal"
+                android:paddingStart="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:imeOptions="actionDone"
+                android:background="@drawable/rounded_corner_edit_text"/>
+
+            <TextView
+                android:id="@+id/tvEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:hint="End Date"
+                android:textColor="@color/textColor"
+                android:paddingStart="10dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/rounded_corner_edit_text"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/image"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/relativeLayout3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder"/>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:layout_marginBottom="12dp"
+                android:text="Add an Image"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:paddingStart="10dp"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="Select Vehicle by Brand and model "/>
+
+            <RelativeLayout
+                android:id="@+id/vtypeLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:id="@+id/v_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Click here to select vehicle type"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:paddingStart="10dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/rounded_corner_edit_text"/>
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    android:id="@+id/spinBar2"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_gravity="center"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    style="@style/SpinKitView.Large.Wave"
+                    app:SpinKit_Color="@color/colorPrimary"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linearBrand"
+                android:visibility="visible"
+                android:layout_marginBottom="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:text="Brand "/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/brandmodel_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:background="@drawable/red_curved_button"
+        android:text="SUBMIT" />
+
+    <LinearLayout
+        android:id="@+id/spin_kit_submit"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/red_curved_button"
+        android:gravity="center"
+        android:padding="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5">
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:visibility="visible"
+            style="@style/SpinKitView.Large.Wave"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:SpinKit_Color="#fff" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

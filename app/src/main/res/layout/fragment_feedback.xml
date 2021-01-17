@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/promptSuggestion"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/signika_negative"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:text="Suggestions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etSuggestion"
+        app:layout_constraintTop_toBottomOf="@+id/promptSuggestion"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_corner_edit_text"
+        android:layout_marginTop="5dp"
+        android:minHeight="64dp"
+        android:minLines="5"
+        android:gravity="left|top"
+        android:lines="10"
+        android:maxLines="10"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/promptComplaint"
+        app:layout_constraintTop_toBottomOf="@+id/etSuggestion"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:text="Complaints"
+        android:fontFamily="@font/signika_negative"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etComplaint"
+        app:layout_constraintTop_toBottomOf="@+id/promptComplaint"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:background="@drawable/rounded_corner_edit_text"
+        android:layout_marginTop="5dp"
+        android:minHeight="64dp"
+        android:minLines="5"
+        android:lines="10"
+        android:gravity="left|top"
+        android:maxLines="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="44dp"
+        android:textColor="#fff"
+        app:layout_constraintTop_toBottomOf="@+id/etComplaint"
+        android:background="@drawable/red_curved_button"
+        android:text="submit" />
+
+    <LinearLayout
+        android:id="@+id/spin_kit"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/red_curved_button"
+        app:layout_constraintTop_toBottomOf="@+id/etComplaint"
+        android:gravity="center"
+        android:padding="5dp">
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:visibility="visible"
+            style="@style/SpinKitView.Large.Wave"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:SpinKit_Color="#fff" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

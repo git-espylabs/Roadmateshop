@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/addButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="#fff"
+        android:background="@drawable/red_curved_button"
+        android:text="Add  vehicle" />
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addButton"
+        android:layout_marginBottom="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvCommonTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:text="Select Service Type "/>
+
+            <RadioGroup
+                android:id="@+id/rdGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/radiobrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:textSize="18sp"
+                    android:checked="true"
+                    android:text="Select Vehicle by Brand and model"
+                    android:padding="10dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/vtypeLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <TextView
+                        android:id="@+id/v_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Click here to select vehicle type"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:paddingStart="10dp"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/rounded_corner_edit_text"/>
+
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/spinBar2"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginRight="9dp"
+                        android:layout_gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"
+                        style="@style/SpinKitView.Large.Wave"
+                        app:SpinKit_Color="@color/colorPrimary"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearBrand"
+                    android:visibility="visible"
+                    android:layout_marginBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:visibility="gone"
+                        android:text="Brand "/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/brandmodel_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <RadioButton
+                    android:visibility="gone"
+                    android:id="@+id/radioAll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="All vehicles"
+                    android:textSize="18sp"
+                    android:padding="10dp"/>
+                <RadioButton
+                    android:id="@+id/radiotwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Two wheelers"
+                    android:textSize="18sp"
+                    android:padding="10dp"/>
+                <RadioButton
+                    android:id="@+id/radioThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Three wheelers"
+                    android:textSize="18sp"
+                    android:padding="10dp"/>
+                <RadioButton
+                    android:id="@+id/radioFour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Four wheelers"
+                    android:textSize="18sp"
+                    android:padding="10dp"/>
+                <RadioButton
+                    android:id="@+id/radioHeavy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Heavy vehicles"
+                    android:textSize="18sp"
+                    android:padding="10dp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/progressLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:visibility="visible"
+            style="@style/SpinKitView.Large.MultiplePulseRing"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/colorPrimary" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

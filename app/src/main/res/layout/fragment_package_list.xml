@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/vtypeSelLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <TextView
+            android:visibility="visible"
+            android:id="@+id/selVehType"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Select Vehicle Type"
+            android:textSize="16sp"
+            android:textColor="@color/textColor"
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner_edit_text"/>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spinBar1"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginRight="9dp"
+            android:layout_gravity="center"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            style="@style/SpinKitView.Large.Wave"
+            app:SpinKit_Color="@color/colorPrimary"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/vbrnadSelLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/vtypeSelLay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <TextView
+            android:id="@+id/selBrand"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Select"
+            android:textColor="@color/textColor"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner_edit_text"/>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spinBar3"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginRight="9dp"
+            android:layout_gravity="center"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            style="@style/SpinKitView.Large.Wave"
+            app:SpinKit_Color="@color/colorPrimary"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/vbrnadSelLay"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:background="@drawable/red_curved_button"
+        android:text="View" />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnSubmit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/packagesRecycler"/>
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/empty_caution"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:visibility="visible"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/empty_caution"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/progressLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:visibility="visible"
+            style="@style/SpinKitView.Large.MultiplePulseRing"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/colorPrimary" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_margin="20dp"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/package_image"
+            android:layout_width="196dp"
+            android:layout_height="144dp"
+            android:scaleType="fitXY" />
+
+        <FrameLayout
+            android:layout_width="196dp"
+            android:layout_height="144dp"
+            android:background="@drawable/black_shadow_one">
+            <TextView
+                android:id="@+id/package_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:alpha="1"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:gravity="center|start"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="25dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="12dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:alpha=".7"
+                android:background="@drawable/capsule_shape_background">
+
+                <TextView
+                    android:id="@+id/package_offeramount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#111"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/package_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#575454"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/strike_through"
+                    />
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

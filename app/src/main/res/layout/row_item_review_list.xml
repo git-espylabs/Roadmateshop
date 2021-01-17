@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/nameLay"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center|left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/username"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:fontFamily="@font/signika_negative"
+            android:textStyle="bold"
+            android:text="Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFC107" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/usercomment"
+        android:textColor="@color/grey_600"
+        android:textSize="12dp"
+        android:fontFamily="@font/signika_negative"
+        android:text="Comment"
+        app:layout_constraintTop_toBottomOf="@+id/nameLay"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

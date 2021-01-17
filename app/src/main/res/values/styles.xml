@@ -1,0 +1,112 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/color2</item>
+        <item name="android:fontFamily">@font/signika_negative</item>
+        <item name="checkboxStyle">@style/MyCheckBoxStyle</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+    </style>
+
+    <style name="WhiteTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="android:homeAsUpIndicator">@drawable/back_button_black</item>
+        <item name="titleTextColor">@android:color/black</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/color2</item>
+        <item name="colorControlHighlight">@color/color2</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorSwitchThumbNormal">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/signika_negative</item>
+        <item name="checkboxStyle">@style/MyCheckBoxStyle</item>
+    </style>
+
+    <style name="BlackTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="android:homeAsUpIndicator">@drawable/back_button_white</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/signika_negative</item>
+        <item name="checkboxStyle">@style/MyCheckBoxStyle</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="RatingBar" parent="Base.Widget.AppCompat.RatingBar.Small">
+        <item name="colorAccent">@color/color1</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/color1</item>
+    </style>
+
+    <style name="ToolbarEspyApp" parent="AppTheme">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="custom_ui_dialogue" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowBackground">@color/TransparentFull</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="PopUpMenuDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/popupDialogAnimation</item>
+    </style>
+
+    <style name="popupDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item></style>
+
+    <style name="TextAppearance44">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="MyCheckBoxStyle" parent="Base.Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="colorControlNormal">#8A686464</item>
+        <item name="colorControlActivated">#0EA385</item>
+    </style>
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/time_slot_spinner_bg</item>
+    </style>
+
+    <style name="UpgradeDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/upgradeDialogAnimation</item>
+    </style>
+
+    <style name="upgradeDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+    </style>
+
+
+</resources>

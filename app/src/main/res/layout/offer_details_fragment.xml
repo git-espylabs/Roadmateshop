@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/offerImage"
+        android:src="@drawable/road_mate_plain"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <TextView
+        android:id="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/offerImage"
+        android:layout_marginTop="7dp"
+        android:textSize="16dp"
+        android:textColor="@color/colorPrimary"
+        android:hint="Offer Title"
+        android:fontFamily="@font/signika_negative_semibold"
+        android:padding="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/ofDesc"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:layout_marginTop="3dp"
+        android:textSize="14dp"
+        android:textColor="@color/colorPrimary"
+        android:hint="Offer Description"
+        android:fontFamily="@font/signika_negative"
+        android:padding="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/priceLay"
+        app:layout_constraintTop_toBottomOf="@+id/ofDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center|start"
+        android:orientation="horizontal"
+        android:weightSum="5">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price details: "
+            android:alpha="1"
+            android:padding="5dp"
+            android:layout_marginStart="15dp"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            android:gravity="center|start" />
+        <TextView
+            android:id="@+id/item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="17sp"
+            />
+        <TextView
+            android:id="@+id/item_strikeprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/strike_through"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/endDateLay"
+        app:layout_constraintTop_toBottomOf="@+id/priceLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center|start"
+        android:orientation="horizontal"
+        android:weightSum="5">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Date: "
+            android:alpha="1"
+            android:padding="5dp"
+            android:layout_marginStart="15dp"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            android:gravity="center|start" />
+
+        <TextView
+            android:id="@+id/endDate"
+            android:background="@drawable/rounded_corner_bg_plain"
+            android:text="Select Date"
+            android:textSize="14dp"
+            android:textColor="#E41414"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/signika_negative"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <Button
+            android:id="@+id/updateEndDate"
+            android:textColor="@color/white"
+            android:padding="7dp"
+            android:background="@drawable/capsule_button_two"
+            android:textAllCaps="false"
+            android:text="Update"
+            android:layout_marginLeft="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btmLay"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginBottom="24dp"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="49dp">
+
+        <Button
+            android:id="@+id/confirmButton"
+            android:layout_weight="0.9"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textColor="#fff"
+            android:background="@drawable/rzp_green_button"
+            android:textAllCaps="false"
+            android:text="Share Offer" />
+
+        <View
+            android:layout_weight="0.2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/addMoreVehicleBtn"
+            android:layout_weight="0.9"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textColor="#fff"
+            android:background="@drawable/rzp_green_button"
+            android:textAllCaps="false"
+            android:text="Add More Vehicle" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/progressLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:visibility="visible"
+            style="@style/SpinKitView.Large.MultiplePulseRing"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/colorPrimary" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

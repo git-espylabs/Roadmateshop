@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "291756834863",
+    "firebase_url": "https://roadmate-aa5ac.firebaseio.com",
+    "project_id": "roadmate-aa5ac",
+    "storage_bucket": "roadmate-aa5ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291756834863:android:4a8ee70333e0832b5606da",
+        "android_client_info": {
+          "package_name": "com.roadmate.shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291756834863-ra9hqjiddl3nblbev3cf3ujq0biaa0ls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhga--AJdb4YiUcsOvKMC-rrOyZuVccHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "291756834863-ra9hqjiddl3nblbev3cf3ujq0biaa0ls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

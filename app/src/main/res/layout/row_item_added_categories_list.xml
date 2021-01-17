@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_marginLeft="7dp"
+        android:padding="5dp"
+        android:id="@+id/itemName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvremove"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:drawableLeft="@drawable/ic_baseline_send"
+        android:drawablePadding="7dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16dp"
+        android:fontFamily="@font/signika_negative"
+        android:gravity="center|left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvremove"
+        app:layout_constraintTop_toTopOf="@+id/itemName"
+        app:layout_constraintBottom_toBottomOf="@+id/itemName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginRight="7dp"
+        android:text="Remove"
+        android:textSize="16dp"
+        android:textColor="#E60E0E"
+        android:textStyle="bold"
+        android:gravity="center|left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/loadingFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="100dp"
+            style="@style/SpinKitView.Small.MultiplePulseRing"
+            app:SpinKit_Color="@color/colorPrimary"/>
+
+    </FrameLayout>
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/empty_caution"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:visibility="visible"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/empty_caution"/>
+
+    </FrameLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/rv">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:layout_marginBottom="7dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/select"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:layout_margin="3dp"
+            android:background="@color/color2"
+            android:text="Select all"/>
+        <Button
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/deselect"
+            android:layout_margin="3dp"
+            android:textColor="@color/white"
+            android:background="@color/color1"
+            android:text="Deselect all"/>
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/next"
+            android:layout_margin="3dp"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimaryDark"
+            android:text="Submit"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
