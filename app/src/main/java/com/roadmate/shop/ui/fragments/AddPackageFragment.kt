@@ -94,7 +94,7 @@ class AddPackageFragment: BaseFragment(), View.OnClickListener{
                 lifecycleScope.launch {
                     val response = APIManager.call<ApiServices, Response<PackageFeatureMaster>> {
 
-                        getFetureListOfPackage(packageFeatureRequestJSON(obj!!.package_type))
+                        getFetureListOfPackage(packageFeatureRequestJSON(obj!!.id))
                     }
 
                     if (response.isSuccessful ) {

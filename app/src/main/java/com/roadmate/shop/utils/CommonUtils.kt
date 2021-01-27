@@ -316,6 +316,18 @@ class CommonUtils {
             return outputDate
         }
 
+
+        fun formatDate_yyyyMMddInWords(inputDate: String?): String? {
+            var outputDate: String? = ""
+            try {
+                val date = SimpleDateFormat("yyyy-MM-dd").parse(inputDate)
+                outputDate = SimpleDateFormat("dd MMM yyyy").format(date)
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace()
+            }
+            return outputDate
+        }
+
         fun capitalizeSentence(sententence: String): String? {
             var upperString = ""
             upperString = try {

@@ -8,6 +8,7 @@ data class BookedCustomersTrans(
     @SerializedName("id") val id: String,
     @SerializedName("customer_id") val customer_id: String,
     @SerializedName("name") val name: String,
+    @SerializedName("adate") val bookingDate: String,
     @SerializedName("timeslots") val timeslot: String,
     @SerializedName("book_id") val book_id: String,
     @SerializedName("brand") val brand: String,

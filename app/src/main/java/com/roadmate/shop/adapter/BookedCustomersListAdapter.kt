@@ -37,7 +37,7 @@ class BookedCustomersListAdapter  internal constructor(private val context: Cont
         val data = mData[position]
 
         holder.tvCustomerName.text = data.name
-        holder.tvBookingDate.text = data.timeslot
+        holder.tvBookingDate.text = CommonUtils.formatDate_yyyyMMddInWords(data.bookingDate) + ", " + CommonUtils.formatTime_Hmmss(data.timeslot)
         holder.tvVehicle.text = "Vehicle: " + data.brand + " " + data.brand_model + " (" + data.fuel_type + ")"
 
         holder.mainLay.setOnClickListener {
