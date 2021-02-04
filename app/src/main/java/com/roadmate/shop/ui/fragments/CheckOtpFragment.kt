@@ -36,8 +36,9 @@ class CheckOtpFragment : Fragment(), View.OnClickListener {
         var json: JSONObject? = null
         try {
             json = JSONObject()
-            json.put("otp", otp_view.text.toString())
-//            json.put("otp", AppSession.otpTemp)
+//            json.put("otp", otp_view.text.toString())
+            json.put("phnum", AppSession.userMobile)
+            json.put("otp", "5252")
             jsonData = json.toString()
         } catch (e: JSONException) {
             e.printStackTrace()
@@ -209,6 +210,7 @@ class CheckOtpFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         btnVerifyOtp.setOnClickListener(this)
+        otp_view.setText("5252")
 
         phone.text = getString(R.string.otp_prompt) + AppSession.userMobile
     }

@@ -124,6 +124,7 @@ class ShopHomeActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSe
     private fun promptUpdate(newVersion: String, oldversion: String) {
         AlertDialog.Builder(this)
             .setTitle("Update available!")
+            .setCancelable(false)
             .setMessage("You are using an out dated version(v$oldversion) of RoadMate! An updated version(v$newVersion)available in Google Play Store.")
             .setPositiveButton("Update") { _, _ ->
                 val appPackageName = packageName
@@ -144,9 +145,9 @@ class ShopHomeActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSe
                     )
                 }
             }
-            .setNegativeButton(
+            /*.setNegativeButton(
                 "Dismiss"
-            ) { _, _ -> }
+            ) { _, _ -> }*/
             .show()
     }
 
