@@ -209,18 +209,22 @@ class MyShopProfileFragment: Fragment(), View.OnClickListener {
     private fun removeCategory(position: Int, obj: MoreServicesTrans){
         showProgress(true)
         lifecycleScope.launch {
-            val response = APIManager.call<ApiServices, Response<RoadmateApiResponse>> {
-                deleteCategory(removeCategoryRequestJSON(obj.serviceId))
-            }
-            if (response.isSuccessful && response.body()?.message.equals("success", true)){
-                addedShopTypesList.removeAt(position)
-                addedCategoryListAdapter.notifyDataSetChanged()
-                activity!!.toast {
-                    message = "Category removed"
-                    duration = Toast.LENGTH_SHORT
+            try {
+                val response = APIManager.call<ApiServices, Response<RoadmateApiResponse>> {
+                    deleteCategory(removeCategoryRequestJSON(obj.serviceId))
                 }
+                if (response.isSuccessful && response.body()?.message.equals("success", true)){
+                    addedShopTypesList.removeAt(position)
+                    addedCategoryListAdapter.notifyDataSetChanged()
+                    activity!!.toast {
+                        message = "Category removed"
+                        duration = Toast.LENGTH_SHORT
+                    }
+                }
+                showProgress(false)
+            } catch (e: Exception) {
+                showProgress(false)
             }
-            showProgress(false)
         }
     }
 

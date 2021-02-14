@@ -81,6 +81,7 @@ class ShopOffersFragment: BaseFragment() {
         val adapter = ShopStoreProductOfferAdapter(activity!!, bannerList){it ->
             val intent = Intent(context, ProductOfferDetailsActivity::class.java)
             intent.putExtra("offerid", it!!.id)
+            intent.putExtra("startsrc", "offerhome")
             startActivity(intent)
         }
         productList.adapter = adapter

@@ -64,6 +64,19 @@ class ProductOfferDetailsFragment: BaseFragment() {
         endDate.text = CommonUtils.formatDate_yyyyMMdd(data.end_date)
         shopName = data.shopname
         Picasso.with(context).load(BuildConfig.BANNER_URL_ENDPOINT + data.product_picture).into(offerImage)
+
+        arguments?.let {
+            if (it["startsrc"] == "offerhome") {
+                btnSoldOut.visibility = View.VISIBLE
+                btnShare.visibility = View.VISIBLE
+            } else {
+                btnSoldOut.visibility = View.GONE
+                btnShare.visibility = View.GONE
+            }
+        }?: run {
+            btnSoldOut.visibility = View.VISIBLE
+            btnShare.visibility = View.VISIBLE
+        }
     }
 
     private fun offerDetailsRequest() : RequestBody {
