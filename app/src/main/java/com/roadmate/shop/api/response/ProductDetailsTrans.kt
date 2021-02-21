@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class ProductDetailsTrans(
     @SerializedName("id") val pid: String,
+    @SerializedName("user_type") val user_type: String,
     @SerializedName("product_name") val pname: String,
     @SerializedName("price") val pprice: String,
     @SerializedName("image_1") val pimg1: String = "",
@@ -12,6 +13,7 @@ data class ProductDetailsTrans(
     @SerializedName("store_prod_category") val category: String = "",
     @SerializedName("user_id") val userId: String,
     @SerializedName("phnum") val phone: String = "",
+    @SerializedName("phone_number") val phone_number: String = "",
     @SerializedName("created_at") val createdat: String = "",
     @SerializedName("status") val status: String = "",
     @SerializedName("cat_name") val categoryName: String = "",

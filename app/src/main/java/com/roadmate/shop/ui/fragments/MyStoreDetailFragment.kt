@@ -30,7 +30,7 @@ class MyStoreDetailFragment : Fragment(){
     private val currentpage = 0
 
     var p_id = ""
-    var p_contact = ""
+    var p_contact: String? = ""
 
     var r_images: ArrayList<String>? = arrayListOf()
 
@@ -59,7 +59,11 @@ class MyStoreDetailFragment : Fragment(){
         product_sold_contact.text = data.phone
         product_price.text = data.pprice
 
-        p_contact = data.phone
+        if (data.user_type == "2") {
+            p_contact = data.phone
+        } else {
+            p_contact = data.phone_number
+        }
 
         pager.adapter = SliderAdapter(activity!!, r_images!!)
         indicator.setViewPager(pager)
@@ -107,12 +111,19 @@ class MyStoreDetailFragment : Fragment(){
         getProductDetails()
 
         call.setOnClickListener(View.OnClickListener {
-            if (p_contact.isNotEmpty()) {
-                val uri = "tel:+91$p_contact"
-                val intent = Intent(Intent.ACTION_DIAL)
-                intent.data = Uri.parse(uri)
-                startActivity(intent)
-            } else {
+            p_contact?.let {
+                if (it.isNotEmpty()) {
+                    val uri = "tel:+91$p_contact"
+                    val intent = Intent(Intent.ACTION_DIAL)
+                    intent.data = Uri.parse(uri)
+                    startActivity(intent)
+                } else {
+                    activity!!.toast {
+                        message = "No contact details available"
+                        duration = Toast.LENGTH_LONG
+                    }
+                }
+            }?: run {
                 activity!!.toast {
                     message = "No contact details available"
                     duration = Toast.LENGTH_LONG

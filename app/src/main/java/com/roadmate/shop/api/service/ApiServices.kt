@@ -198,7 +198,7 @@ interface ApiServices {
     @POST("shopregpaymentupdate")
     suspend fun insertPaymentToServer(@Body jsonRequest : RequestBody): Response<RoadmateApiResponse>
 
-    @POST("storanswer")
+    @POST("shopgcmupdate")
     suspend fun registerForFcm(@Body jsonRequest : RequestBody): Response<RoadmateApiResponse>
 
     @POST("shopoffer_models")

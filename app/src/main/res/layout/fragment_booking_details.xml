@@ -396,7 +396,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Wor Status"
+                android:text="Work Status"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:textStyle="bold"

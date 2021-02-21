@@ -1,13 +1,13 @@
 package com.roadmate.shop.ui.fragments
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.CompoundButton
 import android.widget.ListView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
@@ -27,6 +27,7 @@ import com.roadmate.shop.extensions.toast
 import com.roadmate.shop.preference.ShopDetails
 import com.roadmate.shop.utils.NetworkUtils
 import kotlinx.android.synthetic.main.fragment_add_package.*
+import kotlinx.android.synthetic.main.fragment_add_package.view.*
 import kotlinx.coroutines.launch
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -40,6 +41,7 @@ import java.util.*
 class AddPackageFragment: BaseFragment(), View.OnClickListener{
 
     var packageSelectedList: ArrayList<PackageTrans> = arrayListOf()
+    var allPackageList: ArrayList<PackageTrans> = arrayListOf()
     private lateinit var adapterPackage: PackageSelectAdapter
     lateinit var adapter: ArrayAdapter<String>
     lateinit var listView: ListView
@@ -58,10 +60,14 @@ class AddPackageFragment: BaseFragment(), View.OnClickListener{
                 getAllPackageList(shopImageRequestJSON())
             }
             if (response.isSuccessful && response.body()?.data!!.isNotEmpty()){
-                populatePackagesList(response.body()?.data!!)
+                check.isChecked = false
+                packageSelectedList.clear()
+                packageSelectedList.addAll(response.body()?.data!!)
+                populatePackagesList(packageSelectedList)
             }else{
                 empty_caution.visibility = View.VISIBLE
                 rv.visibility = View.GONE
+                allselect.visibility = View.GONE
             }
             showProgress(false)
         }
@@ -84,10 +90,11 @@ class AddPackageFragment: BaseFragment(), View.OnClickListener{
     private fun populatePackagesList(list: ArrayList<PackageTrans>){
         empty_caution.visibility = View.GONE
         rv.visibility = View.VISIBLE
+        allselect.visibility = View.VISIBLE
         next.visibility = View.VISIBLE
         rv.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
-        adapterPackage = PackageSelectAdapter(activity!!, list){ obj, isSelected ,isShowMore->
+        adapterPackage = PackageSelectAdapter(activity!!, packageSelectedList){ obj, isSelected, isShowMore->
 
             if(isShowMore) {
                 showProgress(true)
@@ -116,7 +123,7 @@ class AddPackageFragment: BaseFragment(), View.OnClickListener{
 
 
                         AlertDialog.Builder(context)
-                            .setTitle(obj!!.title +" for " +obj!!.brand_model + " "+"Features")
+                            .setTitle(obj!!.title + " for " + obj!!.brand_model + " " + "Features")
                             .setMessage(features)
                              .show()
 
@@ -126,6 +133,7 @@ class AddPackageFragment: BaseFragment(), View.OnClickListener{
 
                         empty_caution.visibility = View.GONE
                         rv.visibility = View.VISIBLE
+                        allselect.visibility = View.VISIBLE
                     }
                     showProgress(false)
                 }
@@ -134,10 +142,10 @@ class AddPackageFragment: BaseFragment(), View.OnClickListener{
                 if (isSelected){
                     packageSelectedList.add(obj!!)
                 }else{
-                    for (packObj in packageSelectedList){
-                        if (packObj.id == obj!!.id){
-                            packageSelectedList.remove(packObj)
-                            break
+                    packageSelectedList.filter { it.isSelected }.forEach lit@{
+                        if (it.id == obj!!.id){
+                            it.isSelected = false
+                            return@lit
                         }
                     }
                 }
@@ -156,7 +164,7 @@ class AddPackageFragment: BaseFragment(), View.OnClickListener{
         }
     }
 
-    private fun packageFeatureRequestJSON(id:String) : RequestBody {
+    private fun packageFeatureRequestJSON(id: String) : RequestBody {
         var jsonData = ""
         var json: JSONObject? = null
         try {
@@ -176,17 +184,17 @@ class AddPackageFragment: BaseFragment(), View.OnClickListener{
 
         var jsonArray = JSONArray()
         try {
-            for (obj in packageSelectedList){
+            packageSelectedList.filter { it.isSelected }.forEach {
                 var jsonObj = JSONObject()
-                jsonObj.put("shopid",ShopDetails().shopId)
-                jsonObj.put("pkid",obj.id)
+                jsonObj.put("shopid", ShopDetails().shopId)
+                jsonObj.put("pkid", it.id)
                 jsonArray.put(jsonObj)
             }
             json.put("packagelist", jsonArray)
             jsonData = json.toString()
         } catch (e: Exception) {
             e.printStackTrace()
-            Log.i("sdsa",e.printStackTrace().toString())
+            Log.i("sdsa", e.printStackTrace().toString())
         }
 
         return jsonData.toRequestBody()
@@ -229,23 +237,39 @@ class AddPackageFragment: BaseFragment(), View.OnClickListener{
         }elseDo {
             empty_caution.visibility = View.VISIBLE
             rv.visibility = View.GONE
+            allselect.visibility = View.GONE
             next.visibility = View.GONE
             activity!!.toast {
                 message = "No internet connectivity!"
                 duration = Toast.LENGTH_LONG
             }
         }
+
+        check.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                packageSelectedList.forEach {
+                    var obj = it
+                    obj.isSelected = true
+                }
+            }else{
+                packageSelectedList.forEach {
+                    var obj = it
+                    obj.isSelected = false
+                }
+            }
+            adapterPackage.notifyDataSetChanged()
+        }
     }
 
     override fun onClick(v: View?) {
         when(v?.id){
-            R.id.select ->{
+            R.id.select -> {
 
             }
-            R.id.next ->{
-                packageSelectedList.isNotEmpty().doIfTrue {
+            R.id.next -> {
+                packageSelectedList.any { it.isSelected }.doIfTrue {
                     submitSelectedList()
-                }elseDo {
+                } elseDo {
                     activity!!.toast {
                         message = "Please select a package"
                         duration = Toast.LENGTH_LONG

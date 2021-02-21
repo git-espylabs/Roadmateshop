@@ -39,9 +39,9 @@
         <item>Inactive</item>
     </string-array>
     <string-array name="book_type_category">
+        <item>Service Bookings</item>
         <item>e-workshop Booking</item>
         <item>Offer Booking</item>
-        <item>Service Bookings</item>
     </string-array>
     <string name="title_activity_nav_drawer">NavDrawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

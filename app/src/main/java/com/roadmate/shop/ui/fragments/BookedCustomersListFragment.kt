@@ -119,7 +119,7 @@ class BookedCustomersListFragment: BaseFragment(), AdapterView.OnItemSelectedLis
 
     override fun onNothingSelected(parent: AdapterView<*>?) {
         NetworkUtils.isNetworkConnected(activity!!).doIfTrue {
-            getBookedCustomersList("1")
+            getBookedCustomersList("3")
         }elseDo {
             activity!!.toast {
                 message = "No Internet Connectivity"
@@ -130,7 +130,17 @@ class BookedCustomersListFragment: BaseFragment(), AdapterView.OnItemSelectedLis
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         NetworkUtils.isNetworkConnected(activity!!).doIfTrue {
-            getBookedCustomersList((position + 1).toString())
+            when{
+                (position == 0) -> {
+                    getBookedCustomersList("3")
+                }
+                (position == 1) -> {
+                    getBookedCustomersList("1")
+                }
+                (position == 2) -> {
+                    getBookedCustomersList("2")
+                }
+            }
     }elseDo {
         activity!!.toast {
             message = "No Internet Connectivity"

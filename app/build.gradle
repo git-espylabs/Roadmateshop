@@ -26,8 +26,8 @@ android {
         applicationId "com.roadmate.shop"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 18
-        versionName "3.4"
+        versionCode 19
+        versionName "3.5"
 
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true

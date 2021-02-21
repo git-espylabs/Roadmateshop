@@ -58,12 +58,14 @@ class ShopsHomeFragment: BaseFragment(), View.OnClickListener, AppLocationListen
 
 
     private fun registerForFcm(){
-        if (FcmDetails().fcmToken != ""){
-            FcmDetails().isFcmRegistered.doIfFalse {
+        FcmDetails().isFcmRegistered.doIfFalse {
+            if (FcmDetails().fcmToken != ""){
                 processFcmRegistration()
+            }else{
+                requestFcmToke()
             }
-        }else{
-            requestFcmToke()
+        }elseDo {
+            processAppBanner()
         }
     }
 
@@ -77,18 +79,25 @@ class ShopsHomeFragment: BaseFragment(), View.OnClickListener, AppLocationListen
                 }
             }elseDo {
                 AppLogger.info("FCM Token", "getInstanceId failed: " + it.exception)
+                processAppBanner()
             }
         })
     }
 
     private fun processFcmRegistration(){
         lifecycleScope.launch {
-            val response = APIManager.call<ApiServices, Response<RoadmateApiResponse>> {
-                registerForFcm(fcmRegistrationJsonRequest())
+            try {
+                val response = APIManager.call<ApiServices, Response<RoadmateApiResponse>> {
+                    registerForFcm(fcmRegistrationJsonRequest())
+                }
+                if (response.isSuccessful && response.body()?.message == "Success"){
+                    FcmDetails().isFcmRegistered = true
+                    AppLogger.info("FCM Registered")
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
-            if (response.isSuccessful && response.body()?.message == "Success"){
-                AppLogger.info("FCM Registered")
-            }
+            processAppBanner()
         }
     }
 
@@ -98,7 +107,8 @@ class ShopsHomeFragment: BaseFragment(), View.OnClickListener, AppLocationListen
         var json: JSONObject? = null
         try {
             json = JSONObject()
-            json.put("fcm_token", FcmDetails().fcmToken)
+            json.put("shopid", ShopDetails().shopId)
+            json.put("fcmid", FcmDetails().fcmToken)
             jsonData = json.toString()
         } catch (e: JSONException) {
             e.printStackTrace()
@@ -247,7 +257,6 @@ class ShopsHomeFragment: BaseFragment(), View.OnClickListener, AppLocationListen
         getLocation()
         setListeners()
         registerForFcm()
-        processAppBanner()
     }
 
     override fun onStop() {

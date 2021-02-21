@@ -96,7 +96,7 @@ class CheckOtpFragment : Fragment(), View.OnClickListener {
                 } catch (e: Exception) {
                 }
             }
-            initializeUserSettings(data)
+            registerForFcm(data)
         }
     }
 
@@ -128,49 +128,55 @@ class CheckOtpFragment : Fragment(), View.OnClickListener {
         return jsonData.toRequestBody()
     }
 
-    private fun registerForFcm(){
+    private fun registerForFcm(data: OtpTrans){
         if (FcmDetails().fcmToken != ""){
             FcmDetails().isFcmRegistered.doIfFalse {
-                processFcmRegistration()
+                processFcmRegistration(data)
             }
         }else{
-            requestFcmToke()
+            requestFcmToke(data)
         }
     }
 
-    private fun requestFcmToke(){
+    private fun requestFcmToke(data: OtpTrans){
         FirebaseInstanceId.getInstance().instanceId.addOnCompleteListener(OnCompleteListener {
             it.isSuccessful.doIfTrue {
                 AppLogger.info("FCM Token", it.result!!.token)
                 if (it.result!!.token != "") {
                     FcmDetails().fcmToken = it.result!!.token
-                    processFcmRegistration()
+                    processFcmRegistration(data)
                 }
             }elseDo {
                 AppLogger.info("FCM Token", "getInstanceId failed: " + it.exception)
-                moveToNexScreen()
+                initializeUserSettings(data)
             }
         })
     }
 
-    private fun processFcmRegistration(){
+    private fun processFcmRegistration(data: OtpTrans){
         lifecycleScope.launch {
-            val response = APIManager.call<ApiServices, Response<RoadmateApiResponse>> {
-                registerForFcm(fcmRegistrationJsonRequest())
+            try {
+                val response = APIManager.call<ApiServices, Response<RoadmateApiResponse>> {
+                    registerForFcm(fcmRegistrationJsonRequest(data))
+                }
+                if (response.isSuccessful && response.body()?.message == "Success"){
+                    FcmDetails().isFcmRegistered = true
+                    AppLogger.info("FCM Registered")
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
-            if (response.isSuccessful && response.body()?.message == "Success"){
-                AppLogger.info("FCM Registered")
-            }
-            moveToNexScreen()
+            initializeUserSettings(data)
         }
     }
 
-    private fun fcmRegistrationJsonRequest() : RequestBody {
+    private fun fcmRegistrationJsonRequest(data: OtpTrans) : RequestBody {
         var jsonData = ""
         var json: JSONObject? = null
         try {
             json = JSONObject()
-            json.put("fcm_token", FcmDetails().fcmToken)
+            json.put("shopid", data.shop_id)
+            json.put("fcmid", FcmDetails().fcmToken)
             jsonData = json.toString()
         } catch (e: JSONException) {
             e.printStackTrace()
