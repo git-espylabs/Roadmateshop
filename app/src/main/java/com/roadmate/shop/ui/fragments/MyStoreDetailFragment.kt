@@ -59,7 +59,7 @@ class MyStoreDetailFragment : Fragment(){
         product_sold_contact.text = data.phone
         product_price.text = data.pprice
 
-        if (data.user_type == "2") {
+        if (data.user_type == "1") {
             p_contact = data.phone
         } else {
             p_contact = data.phone_number
