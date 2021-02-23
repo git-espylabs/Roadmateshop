@@ -143,6 +143,8 @@ class ShopOffersFragment: BaseFragment() {
             mMap["brand_model"] = offerObj.brand_model
             mMap["vehice_type_name"] = offerObj.vehice_type_name
             mMap["brand"] = offerObj.brand
+            mMap["discount_type"] = offerObj.offer_discount_type
+            mMap["disc_percent"] = offerObj.discount_percentage
 
             val intent = Intent(context, OfferDetailsActivity::class.java)
             intent.putExtra("dataMap", mMap)

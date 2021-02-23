@@ -26,6 +26,7 @@ class ShopOffersAdapter  internal constructor(private val context: Context, priv
         internal var normalPrice: TextView = itemView.findViewById(R.id.normalPrice)
         internal var offerPrice: TextView = itemView.findViewById(R.id.offerPrice)
         internal var btnDetails: TextView = itemView.findViewById(R.id.btnDetails)
+        internal var offer_percentage: TextView = itemView.findViewById(R.id.offer_percentage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -51,9 +52,30 @@ class ShopOffersAdapter  internal constructor(private val context: Context, priv
         holder.offer_title.text = data.title
         holder.offer_title.text = data.title
         holder.offer_desc.text = data.small_desc
-        holder.normalPrice.text = context.resources.getString(R.string.Rs)  + " " + data.normal_amount
 
+        holder.normalPrice.text = context.resources.getString(R.string.Rs)  + " " + data.normal_amount
         holder.offerPrice.text = context.resources.getString(R.string.Rs)  + " " + data.offer_amount
+
+
+        if (data.offer_discount_type == "1") {
+            holder.normalPrice.visibility = View.VISIBLE
+            holder.offer_percentage.visibility = View.GONE
+            if (data.normal_amount != data.offer_amount) {
+                holder.normalPrice.text = context.getString(R.string.Rs) + data.normal_amount
+                holder.offerPrice.text = context.getString(R.string.Rs) + data.offer_amount
+                holder.offerPrice.visibility = View.VISIBLE
+            } else {
+                holder.normalPrice.text = data.normal_amount
+                holder.offerPrice.visibility = View.GONE
+            }
+        }else{
+            holder.normalPrice.visibility = View.GONE
+            holder.offerPrice.visibility = View.GONE
+            holder.offer_percentage.visibility = View.VISIBLE
+            holder.offer_percentage.text = data.discount_percentage + "% " + "Discount"
+        }
+
+
         holder.offerPrice.paintFlags = holder.offerPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
 
         holder.btnDetails.setOnClickListener {

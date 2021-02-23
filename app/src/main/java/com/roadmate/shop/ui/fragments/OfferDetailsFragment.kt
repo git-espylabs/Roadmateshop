@@ -46,13 +46,32 @@ class OfferDetailsFragment: Fragment() {
     var vehice_type_name=""
     var normalAMount = ""
 
+    var discountType = "1"
+    var discountPerc = "0"
+    var catName = ""
+
     private fun populateOfferDetails(){
         if (arguments != null && arguments!!.containsKey("dataMap")){
             var mMap: HashMap<String, String> = this.arguments!!.getSerializable("dataMap") as HashMap<String, String>
             title.text = mMap["title"]!!
             ofDesc.text = mMap["small_desc"]!!
-            item_price.text = getString(R.string.Rs) + mMap["offer_amount"]!!
-            item_strikeprice.text = getString(R.string.Rs) + mMap["normal_amount"]!!
+
+            discountType = mMap["discount_type"]!!.toString()
+            discountPerc = mMap["disc_percent"]!!.toString()
+
+            if (mMap["discount_type"]!!.toString() == "1") {
+                item_discount_perc.visibility = View.GONE
+                item_price.visibility = View.VISIBLE
+                item_strikeprice.visibility = View.VISIBLE
+                item_price.text = getString(R.string.Rs) + mMap["offer_amount"]!!.toString()
+                item_strikeprice.text = getString(R.string.Rs) + mMap["normal_amount"]!!.toString()
+            } else {
+                item_discount_perc.visibility = View.VISIBLE
+                item_price.visibility = View.VISIBLE
+                item_strikeprice.visibility = View.GONE
+                item_discount_perc.text = mMap["disc_percent"]!!.toString() + "% " + "Discount"
+            }
+
             Picasso.with(context).load(BuildConfig.OFFER_URL_ENDPOINT + mMap["pic"]!!).into(offerImage)
             imagename = mMap["pic"]!!
             offerid = mMap["id"]!!
@@ -65,6 +84,7 @@ class OfferDetailsFragment: Fragment() {
             offerTitle = mMap["title"]!!
             offerAmount = mMap["offer_amount"]!!
             normalAMount = mMap["normal_amount"]!!
+            catName = mMap["category"]!!
 
         }else if (arguments != null && arguments!!.containsKey("offerid")){
             getOfferDetails()
@@ -167,11 +187,18 @@ class OfferDetailsFragment: Fragment() {
 
 
     private fun shareLink(){
-        var shareText = "Hurrayyy..!!!\n" +
-                shopName + " special offer " + offerTitle + " "+ resources.getString(R.string.Rs) + normalAMount + "/-" +
-                ", now at just " + resources.getString(R.string.Rs) + offerAmount + "/-" + " through RoadMate.\n" +
-                "Hurry up... don't be late, Book your vehicle slot now.\n" +
-                "https://play.google.com/store/apps/details?id=com.roadmate.app"
+        var shareText = if (discountType == "1") {
+            "Hurrayyy..!!!\n" +
+                    shopName + " special offer " + offerTitle + " "+ resources.getString(R.string.Rs) + normalAMount + "/-" +
+                    ", now at just " + resources.getString(R.string.Rs) + offerAmount + "/-" + " through RoadMate.\n" +
+                    "Hurry up... don't be late, Book your vehicle slot now.\n" +
+                    "https://play.google.com/store/apps/details?id=com.roadmate.app"
+        } else {
+            "Hurrayyy..!!!\n" +
+                    offerTitle + "\n"+ shopName + " special offer " + discountPerc + "% discount on "+ catName + " through RoadMate.\n" +
+                    "Hurry up... don't be late, Book your vehicle slot now.\n" +
+                    "https://play.google.com/store/apps/details?id=com.roadmate.app"
+        }
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
         intent.putExtra(

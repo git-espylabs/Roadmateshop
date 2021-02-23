@@ -74,6 +74,15 @@
             android:textColor="@color/textColor"
             android:textSize="17sp"
             android:textStyle="bold" />
+        <TextView
+            android:id="@+id/item_discount_perc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="17sp"
+            />
 
     </LinearLayout>
 

@@ -19,5 +19,7 @@ data class ShopOffersTrans(
     @SerializedName("category") val category: String,
     @SerializedName("brand_model") val brand_model: String,
     @SerializedName("vehice_type_name") val vehice_type_name: String,
+    @SerializedName("offer_discount_type") val offer_discount_type: String,
+    @SerializedName("discount_percentage") val discount_percentage: String,
     @SerializedName("brand") val brand: String
 )
